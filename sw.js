@@ -1,6 +1,6 @@
-/* Plik generowany przez skrypty/build.py – nie edytuj. Wersja 2.4.0 (2026-11-25). Aplikacja działa bez internetu;
+/* Plik generowany przez skrypty/build.py – nie edytuj. Wersja 2.5.0 (2026-11-25). Aplikacja działa bez internetu;
    przy sieci najpierw pobiera świeżą stronę (nowa wersja po odświeżeniu). Zapytań do serwera prowadzącego nie dotyka. */
-var C='warsztat-2.4.0', PLIKI=["./", "index.html", "manifest.webmanifest", "ikona-192.png", "ikona-512.png", "apple-touch-icon.png"];
+var C='warsztat-2.5.0', PLIKI=["./", "index.html", "manifest.webmanifest", "ikona-192.png", "ikona-512.png", "apple-touch-icon.png"];
 self.addEventListener('install',function(e){ e.waitUntil(caches.open(C).then(function(c){ return c.addAll(PLIKI); })); self.skipWaiting(); });
 self.addEventListener('activate',function(e){ e.waitUntil(caches.keys().then(function(k){ return Promise.all(k.filter(function(n){ return n!==C; }).map(function(n){ return caches.delete(n); })); }).then(function(){ return self.clients.claim(); })); });
 self.addEventListener('fetch',function(e){ var u=new URL(e.request.url); if(e.request.method!=='GET'||u.origin!==location.origin) return;
